@@ -1,0 +1,100 @@
+/*--------------------------------------------------*/
+table {
+    border: 1px #252525 solid;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px;
+}
+td {
+    border: 0.5px #252525 solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.deadCell {
+    background-color: #999999;
+}
+
+.availableCell {
+    background-color: #ffffff;
+}
+/*--------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+article {
+    margin: 30px 20px;
+    padding: 15px 20px;
+    border: solid 1px #252525;
+}
+#div_information, #div_canvasCruzada, #div_questions, #div_game, #div_gameArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+}
+#div_information p{
+    text-align: justify;
+}
+#div_gameArea{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#div_canvasCruzada, #div_questions{
+    margin: 0 10px;
+    width: 45%;
+}
+
+button, input{
+    padding: 10px 5px;
+    margin: 10px 0;
+}
+button{
+    background-color: #252525;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+input{
+    border: solid 0.5px #252525;
+    font-size: 24px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+/*--------------------------------------------------*/
+#div_verifiedAnswer h3{
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+}
+.correctAnswer {
+    background-color: #58D68D;
+    color: #196F3D;
+    border: 1px #196F3D solid;
+}
+.wrongAnswer {
+    background-color: #EC7063;
+    color: #7B241C;
+    border: 1px #7B241C solid;
+}
+/*--------------------------------------------------*/
