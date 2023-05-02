@@ -32,8 +32,10 @@
                             <h3>Resposta Correta</h3>
                         </div>
                         <span id="span_questionText"></span>
-                        <input type="text" id="input_answer" placeholder="Sua Reposta">
-                        <button id="button_verify" onclick="verify()" class="button">Verificar</button>
+                        <div>
+                            <input type="text" id="input_answer" placeholder="Sua Reposta">
+                            <button id="button_verify" onclick="verify()" class="button">Verificar</button>
+                        </div>
                     </div>
 
                 </div>
@@ -58,7 +60,7 @@
         var special_words = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
 
         var questions_list = [
-            'Local onde se encontram os registradores,a ULA e onde é realizado o processamento de operações lógicas e aritméticas',
+            'Local onde se encontram os registradores, a ULA e onde é realizado o processamento de operações lógicas e aritméticas',
             'Nome do componente que realiza operações lógicas e aritméticas?',
             'Pequenas memórias localizadas na CPU.',
             'Memória volátil que visa trazer velocidade e agilidade para o sistema. Qual a sigla desta memória?',
@@ -318,7 +320,7 @@
         function start() {
             cont_correctAnswer = 0;
             bt_destroyGame.style.display = 'block';
-            div_questions.style.display = 'block';
+            div_questions.style.display = 'flex';
             document.getElementById("div_information").style.display = 'none';
             renderGrid();
             gameSequence();

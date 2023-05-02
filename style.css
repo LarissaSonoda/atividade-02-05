@@ -85,6 +85,9 @@ article {
     margin: 0 10px;
     width: 45%;
 }
+#div_questions{
+    align-items: flex-start;
+}
 
 button, input{
     padding: 10px 5px;
