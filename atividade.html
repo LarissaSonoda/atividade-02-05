@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Palavras-Cruzadas Evolution</title>
 </head>
+
 <body>
     <article>
         <div class="container">
@@ -15,15 +16,15 @@
                 <div id="div_information">
                     <h2>Como jogar</h2>
                     <p>
-                        Clique em "Começar o Jogo" para iniciar uma partida 
-                        Perguntas serão exibidas na parte inferior do quadro 
+                        Clique em "Começar o Jogo" para iniciar uma partida
+                        Perguntas serão exibidas na parte inferior do quadro
                         Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua
                         resposta
-                        A partida acaba quando as 16 questões forem respondidas 
+                        A partida acaba quando as 16 questões forem respondidas
                     </p>
                     <button id="bt_start" onclick="start()">Iniciar</button>
                 </div>
-                
+
                 <div id="div_gameArea">
                     <div id="div_canvasCruzada"></div>
                     <div style="display: none" id="div_questions">
@@ -34,8 +35,9 @@
                         <input type="text" id="input_answer" placeholder="Sua Reposta">
                         <button id="button_verify" onclick="verify()" class="button">Verificar</button>
                     </div>
+
                 </div>
-                
+
                 <button style="display: none" id="bt_destroyGame" onclick="destroyGrid()">Encerrar o Jogo</button>
             </div>
             <footer>
@@ -55,24 +57,24 @@
     <script>
         var special_words = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
 
-var questions_list = [
-    'Local onde se encontram os registradores,a ULA e onde é realizado o processamento de operações lógicas e aritméticas',
-    'Nome do componente que realiza operações lógicas e aritméticas?',
-    'Pequenas memórias localizadas na CPU.',
-    'Memória volátil que visa trazer velocidade e agilidade para o sistema. Qual a sigla desta memória?',
-    'Memória permanente que permite apenas leitura, com nome de Read Only Memory. Qual a sigla da memória?',
-    'Qual a memória não volátil que necessita de exposição à luz ultravioleta para apagar uma informação?',
-    'Qual o nome da memória não volátil tipo EEPROM que não necessita de recebimento de energia constante.',
-    'Tipo de memória que não é acessado diretamente pela CPU, mas sim acessada através de intermédio da memória RAM.',
-    'Recurso da placa mãe para acessar a memória RAM sem sobrecarregar o processador.',
-    'Também conhecido pela sigla SS (Slave Select), é utilizado para selecionar "chips" de periféricos/dispositivos de entrada de dados e ativá-los. Qual o nome deste mecanismo?',
-    'Trilha ou caminho utilizado para se referir a um endereço físico da memória. Qual o nome deste conceito?',
-    'Qual o nome dado ao dispositivo responsável pelo transporte interno de dados em um computador?',
-    'Linha de processadores da Intel que foi lançada em 2009.',
-    'Linha de processadores da Intel lançada em 2008.',    
-    'Qual o nome do tipo de processador que possui dois núcleos?',
-    'Qual o nome do tipo de processador que possui quatro núcleos, com o dobro da capacidade de um Dual Core?'
-];
+        var questions_list = [
+            'Local onde se encontram os registradores,a ULA e onde é realizado o processamento de operações lógicas e aritméticas',
+            'Nome do componente que realiza operações lógicas e aritméticas?',
+            'Pequenas memórias localizadas na CPU.',
+            'Memória volátil que visa trazer velocidade e agilidade para o sistema. Qual a sigla desta memória?',
+            'Memória permanente que permite apenas leitura, com nome de Read Only Memory. Qual a sigla da memória?',
+            'Qual a memória não volátil que necessita de exposição à luz ultravioleta para apagar uma informação?',
+            'Qual o nome da memória não volátil tipo EEPROM que não necessita de recebimento de energia constante.',
+            'Tipo de memória que não é acessado diretamente pela CPU, mas sim acessada através de intermédio da memória RAM.',
+            'Recurso da placa mãe para acessar a memória RAM sem sobrecarregar o processador.',
+            'Também conhecido pela sigla SS (Slave Select), é utilizado para selecionar "chips" de periféricos/dispositivos de entrada de dados e ativá-los. Qual o nome deste mecanismo?',
+            'Trilha ou caminho utilizado para se referir a um endereço físico da memória. Qual o nome deste conceito?',
+            'Qual o nome dado ao dispositivo responsável pelo transporte interno de dados em um computador?',
+            'Linha de processadores da Intel que foi lançada em 2009.',
+            'Linha de processadores da Intel lançada em 2008.',
+            'Qual o nome do tipo de processador que possui dois núcleos?',
+            'Qual o nome do tipo de processador que possui quatro núcleos, com o dobro da capacidade de um Dual Core?'
+        ];
 
         var filledCell = [2, 20, 38, 133, 134, 135, 59, 77, 95, 113, 131, 149,
             167, 185, 203, 221, 239, 257, 275, 59, 60, 61, 272, 290, 308, 236,
@@ -329,6 +331,7 @@ var questions_list = [
 
             document.querySelector('#div_canvasCruzada').innerHTML = '';
             document.getElementById("div_information").style.display = 'flex';
+            pontuation();
         }
 
         function gameSequence() {
@@ -413,6 +416,11 @@ var questions_list = [
 
             paintCells();
         }
+        function pontuation() {
+            div_information.style.display = 'block';
+
+            div_information.innerHTML = '<img src="img/victory.gif"><h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>';
+        }
 
 
 
@@ -442,7 +450,7 @@ var questions_list = [
                 // answer = answer.toLowerCase();
                 if (answer == special_words[cont_correctAnswer]) {
                     div_verifiedAnswer.className = 'correctAnswer';
-                    div_verifiedAnswer.innerHTML = '<h3>Resposta correta!</h3>';
+                    div_verifiedAnswer.innerHTML = '<h3>Resposta correta!</h3> <img src="img/respCorreta.gif" alt="">';
                     cont_correctAnswer++;
                 }
                 else {
