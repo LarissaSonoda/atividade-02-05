@@ -43,6 +43,10 @@ article {
     align-items: center;
     font-size: 28px;
 }
+#div_information h2{
+    color: #1983c4;
+    text-shadow: 3px 2px 0px #c1f6f8;
+}
 #div_information p{
     text-align: justify;
 }
