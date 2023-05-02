@@ -469,7 +469,7 @@ function verify() {
         }
         else {
             div_verifiedAnswer.classList.add('wrongAnswer');
-            div_verifiedAnswer.innerHTML = '<br>Resposta Incorreta, tente novamente';
+            div_verifiedAnswer.innerHTML = '<br>Resposta Incorreta, tente novamente<br> <img src="img/respIncorreta.gif">';
         }
         setTimeout(function () {
             div_verifiedAnswer.style.display = 'block';
