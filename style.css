@@ -58,7 +58,7 @@ article {
     margin: 30px 20px;
     padding: 15px 20px;
     border: solid 0px #252525;
-    /*background-color: #6ca4ac;*/
+    background-color: #6ca4ac;
 }
 #div_information, #div_canvasCruzada, #div_questions, #div_game, #div_gameArea{
     display: flex;
