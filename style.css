@@ -20,6 +20,11 @@ td {
 }
 /*--------------------------------------------------*/
 
+@font-face {
+    font-family: 'Guardians';
+    src: url(fontes/Guardians.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -30,12 +35,26 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px 15px;
+    background-image: url("imagens/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2, h3, button{
+    font-family: 'Guardians';
+}
+h2{
+    font-size: 1.25em;
+}
+h3{
+    font-size: 1em;
 }
 
 article {
     margin: 30px 20px;
     padding: 15px 20px;
     border: solid 1px #252525;
+    background-color: aquamarine;
 }
 #div_information, #div_canvasCruzada, #div_questions, #div_game, #div_gameArea{
     display: flex;
@@ -61,7 +80,7 @@ button, input{
 }
 button{
     background-color: #252525;
-    font-size: 28px;
+    font-size: 0.5em;
     color: white;
     cursor: pointer;
 }
