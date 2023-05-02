@@ -1,14 +1,14 @@
 /*--------------------------------------------------*/
 table {
     border: 1px #252525 solid;
-    font-size: 26px;
+    font-size: 10px;
     font-weight: bold;
     padding: 10px;
 }
 td {
     border: 0.5px #252525 solid;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     text-align: center;
 }
 .deadCell {
@@ -37,11 +37,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 15px;
+    padding: 5px 15px;
     background-image: url("imagens/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Titillium Web', sans-serif !important;
+    color: white;
 }
 
 h2, h3, button{
@@ -55,10 +56,10 @@ h3{
 }
 
 article {
-    margin: 30px 20px;
+    margin: 0 20px;
     padding: 15px 20px;
     border: solid 0px #252525;
-    /*background-color: #6ca4ac;*/
+    background-color: #6ca4ac;
 }
 #div_information, #div_canvasCruzada, #div_questions, #div_game, #div_gameArea{
     display: flex;
@@ -111,10 +112,19 @@ footer ul{
 }
 
 /*--------------------------------------------------*/
+#div_verifiedAnswer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+}
 #div_verifiedAnswer h3{
     width: 100%;
     text-align: center;
     font-weight: normal;
+}
+#div_verifiedAnswer img{
+    width: 50%;
 }
 .correctAnswer {
     background-color: #58D68D;

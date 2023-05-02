@@ -441,17 +441,15 @@ var questions_list = [
             if (answer != '') {
                 // answer = answer.toLowerCase();
                 if (answer == special_words[cont_correctAnswer]) {
-                    div_verifiedAnswer.classList.add('correctAnswer');
+                    div_verifiedAnswer.className = 'correctAnswer';
                     div_verifiedAnswer.innerHTML = '<h3>Resposta correta!</h3>';
                     cont_correctAnswer++;
                 }
                 else {
-                    div_verifiedAnswer.classList.add('wrongAnswer');
+                    div_verifiedAnswer.className = 'wrongAnswer';
                     div_verifiedAnswer.innerHTML = '<h3>Resposta incorreta, tente novamente...</h3><img src="img/respIncorreta.gif">';
                 }
-                setTimeout(function () {
-                    div_verifiedAnswer.style.display = 'block';
-                }, 500);
+                div_verifiedAnswer.style.display = 'flex';
 
                 setTimeout(function () {
                     div_verifiedAnswer.style.display = 'none';
