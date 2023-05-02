@@ -19,10 +19,13 @@ td {
     background-color: #ffffff;
 }
 /*--------------------------------------------------*/
-
 @font-face {
     font-family: 'Guardians';
     src: url(fontes/Guardians.ttf);
+}
+@font-face {
+    font-family: 'Titillium Web';
+    src: url(fontes/TitilliumWeb-Regular.ttf);
 }
 
 * {
@@ -38,6 +41,7 @@ body {
     background-image: url("imagens/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Titillium Web', sans-serif !important;
 }
 
 h2, h3, button{
